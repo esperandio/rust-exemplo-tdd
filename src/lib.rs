@@ -23,7 +23,7 @@ mod tests {
 
     #[test]
     fn test_triangulo_escaleno() {
-        let triangulo = Triangulo::new(10, 10, 10);
+        let triangulo = Triangulo::new(30, 20, 40);
         assert_eq!(triangulo.escaleno(), true);
     }
 

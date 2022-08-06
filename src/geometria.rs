@@ -19,7 +19,7 @@ pub mod formas_geometricas {
         }
 
         pub fn escaleno(&self) -> bool {
-            self.a == self.b && self.b == self.c
+            self.a != self.b && self.b != self.c
         }
 
         pub fn isosceles(&self) -> bool {
