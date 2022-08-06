@@ -22,21 +22,10 @@ mod tests {
     }
 
     #[test]
-    fn test_triangulo_escaleno() {
-        let triangulo = Triangulo::new(30, 20, 40);
-        assert_eq!(triangulo.escaleno(), true);
-    }
-
-    #[test]
-    fn test_triangulo_isosceles() {
-        let triangulo = Triangulo::new(20, 20, 10);
-        assert_eq!(triangulo.isosceles(), true);
-    }
-
-    #[test]
-    fn test_triangulo_equilatero() {
-        let triangulo = Triangulo::new(10, 10, 10);
-        assert_eq!(triangulo.equilatero(), true);
+    fn test_tipo_triangulo() {
+        assert_eq!(Triangulo::new(10, 10, 10).equilatero(), true);
+        assert_eq!(Triangulo::new(20, 20, 10).isosceles(), true);
+        assert_eq!(Triangulo::new(30, 20, 40).escaleno(), true);
     }
 
     #[test]
