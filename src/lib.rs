@@ -32,4 +32,10 @@ mod tests {
         let triangulo = Triangulo::new(20, 20, 10);
         assert_eq!(triangulo.isosceles(), true);
     }
+
+    #[test]
+    fn test_triangulo_equilatero() {
+        let triangulo = Triangulo::new(10, 10, 10);
+        assert_eq!(triangulo.equilatero(), true);
+    }
 }

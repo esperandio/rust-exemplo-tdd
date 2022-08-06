@@ -27,5 +27,9 @@ pub mod formas_geometricas {
             || (self.a == self.c && self.a != self.b)
             || (self.b == self.c && self.b != self.a)
         }
+
+        pub fn equilatero(&self) -> bool {
+            self.a == self.b && self.b == self.c
+        }
     }
 }
