@@ -17,5 +17,9 @@ pub mod formas_geometricas {
         pub fn equals(&self, a: i32, b: i32, c: i32) -> bool {
             self.a == a && self.b == b && self.c == c
         }
+
+        pub fn escaleno(&self) -> bool {
+            self.a == self.b && self.b == self.c
+        }
     }
 }

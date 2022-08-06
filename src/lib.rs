@@ -20,4 +20,10 @@ mod tests {
     fn test_erro_criacao_triangulo_quando_desigualdade_triangular() {
         Triangulo::new(20, 15, 5);
     }
+
+    #[test]
+    fn test_triangulo_escaleno() {
+        let triangulo = Triangulo::new(10, 10, 10);
+        assert_eq!(triangulo.escaleno(), true);
+    }
 }
