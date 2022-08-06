@@ -26,4 +26,10 @@ mod tests {
         let triangulo = Triangulo::new(10, 10, 10);
         assert_eq!(triangulo.escaleno(), true);
     }
+
+    #[test]
+    fn test_triangulo_isosceles() {
+        let triangulo = Triangulo::new(20, 20, 10);
+        assert_eq!(triangulo.isosceles(), true);
+    }
 }
