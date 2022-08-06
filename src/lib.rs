@@ -38,4 +38,11 @@ mod tests {
         let triangulo = Triangulo::new(10, 10, 10);
         assert_eq!(triangulo.equilatero(), true);
     }
+
+    #[test]
+    fn test_perimetro_triangulo() {
+        assert_eq!(Triangulo::new(19, 19, 19).perimetro(), 57);
+        assert_eq!(Triangulo::new(20, 20, 14).perimetro(), 54);
+        assert_eq!(Triangulo::new(12, 15, 19).perimetro(), 46);
+    }
 }

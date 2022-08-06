@@ -31,5 +31,9 @@ pub mod formas_geometricas {
         pub fn equilatero(&self) -> bool {
             self.a == self.b && self.b == self.c
         }
+
+        pub fn perimetro(&self) -> i32 {
+            self.a + self.b + self.c
+        }
     }
 }
