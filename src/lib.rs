@@ -6,9 +6,9 @@ mod tests {
 
     #[test]
     fn test_sucesso_criacao_triangulo() {
-        let a = 16;
-        let b = 20;
-        let c = 30;
+        let a = 16.0;
+        let b = 20.0;
+        let c = 30.0;
 
         let triangulo = Triangulo::new(a, b, c);
 
@@ -18,27 +18,28 @@ mod tests {
     #[test]
     #[should_panic]
     fn test_erro_criacao_triangulo_quando_desigualdade_triangular() {
-        Triangulo::new(20, 15, 5);
+        Triangulo::new(20.0, 15.0, 5.0);
     }
 
     #[test]
     fn test_tipo_triangulo() {
-        assert_eq!(Triangulo::new(10, 10, 10).equilatero(), true);
-        assert_eq!(Triangulo::new(20, 20, 10).isosceles(), true);
-        assert_eq!(Triangulo::new(30, 20, 40).escaleno(), true);
+        assert_eq!(Triangulo::new(10.0, 10.0, 10.0).equilatero(), true);
+        assert_eq!(Triangulo::new(20.0, 20.0, 10.0).isosceles(), true);
+        assert_eq!(Triangulo::new(30.0, 20.0, 40.0).escaleno(), true);
     }
 
     #[test]
     fn test_perimetro_triangulo() {
-        assert_eq!(Triangulo::new(19, 19, 19).perimetro(), 57);
-        assert_eq!(Triangulo::new(20, 20, 14).perimetro(), 54);
-        assert_eq!(Triangulo::new(12, 15, 19).perimetro(), 46);
+        assert_eq!(Triangulo::new(19.0, 19.0, 19.0).perimetro(), 57.0);
+        assert_eq!(Triangulo::new(20.0, 20.0, 14.0).perimetro(), 54.0);
+        assert_eq!(Triangulo::new(12.0, 15.0, 19.0).perimetro(), 46.0);
     }
 
     #[test]
     fn test_area_triangulo() {
-        assert_eq!(Triangulo::new(20, 20, 20).area().round(), 173.0);
-        assert_eq!(Triangulo::new(20, 20, 24).area().round(), 192.0);
-        assert_eq!(Triangulo::new(12, 19, 9).area().round(), 42.0);
+        assert_eq!(Triangulo::new(20.0, 20.0, 20.0).area().round(), 173.0);
+        assert_eq!(Triangulo::new(20.0, 20.0, 24.0).area().round(), 192.0);
+        assert_eq!(Triangulo::new(7.0, 7.0, 5.0).area().round(), 16.0);
+        assert_eq!(Triangulo::new(12.0, 19.0, 9.0).area().round(), 42.0);
     }
 }
