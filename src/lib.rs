@@ -36,7 +36,9 @@ mod tests {
     }
 
     #[test]
-    fn test_area_triangulo_equilatero() {
+    fn test_area_triangulo() {
         assert_eq!(Triangulo::new(20, 20, 20).area().round(), 173.0);
+        assert_eq!(Triangulo::new(20, 20, 24).area().round(), 192.0);
+        assert_eq!(Triangulo::new(12, 19, 9).area().round(), 42.0);
     }
 }

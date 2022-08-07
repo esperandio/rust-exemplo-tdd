@@ -37,10 +37,13 @@ pub mod formas_geometricas {
         }
 
         pub fn area(&self) -> f64 {
-            let base = self.a as f64;
-            let altura = (self.a as f64) * 3_f64.sqrt() / 2_f64;
+            // Fórmula de Heron 🧙‍♂️:
+            // p = (a + b + c) / 2
+            // A = √p(p-a)(p-b)(p-c)
 
-            (base * altura) / 2_f64
+            let p = (self.a + self.b + self.c) / 2;
+            
+            ((p * (p - self.a) * (p - self.b) * (p - self.c)) as f64).sqrt()
         }
     }
 }
