@@ -34,4 +34,9 @@ mod tests {
         assert_eq!(Triangulo::new(20, 20, 14).perimetro(), 54);
         assert_eq!(Triangulo::new(12, 15, 19).perimetro(), 46);
     }
+
+    #[test]
+    fn test_area_triangulo_equilatero() {
+        assert_eq!(Triangulo::new(20, 20, 20).area().round(), 173.0);
+    }
 }

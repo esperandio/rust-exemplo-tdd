@@ -35,5 +35,9 @@ pub mod formas_geometricas {
         pub fn perimetro(&self) -> i32 {
             self.a + self.b + self.c
         }
+
+        pub fn area(&self) -> f64 {
+            ((self.a.pow(2) as f64) * (3 as f64).sqrt()) / (4 as f64)
+        }
     }
 }
