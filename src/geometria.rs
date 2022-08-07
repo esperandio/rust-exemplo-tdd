@@ -37,7 +37,7 @@ pub mod formas_geometricas {
         }
 
         pub fn area(&self) -> f64 {
-            ((self.a.pow(2) as f64) * (3 as f64).sqrt()) / (4 as f64)
+            ((self.a.pow(2) as f64) * 3_f64.sqrt()) / 4_f64
         }
     }
 }
