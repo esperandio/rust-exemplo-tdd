@@ -1,5 +1,7 @@
 # Getting started
 
+[![Rust](https://github.com/esperandio/rust-exemplo-tdd/actions/workflows/rust.yml/badge.svg)](https://github.com/esperandio/rust-exemplo-tdd/actions/workflows/rust.yml)
+
 ## Generating a new project
 
 ``` sh
