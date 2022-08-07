@@ -37,7 +37,10 @@ pub mod formas_geometricas {
         }
 
         pub fn area(&self) -> f64 {
-            ((self.a.pow(2) as f64) * 3_f64.sqrt()) / 4_f64
+            let base = self.a as f64;
+            let altura = (self.a as f64) * 3_f64.sqrt() / 2_f64;
+
+            (base * altura) / 2_f64
         }
     }
 }
