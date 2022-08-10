@@ -2,7 +2,17 @@ pub mod formas_geometricas {
     pub struct Triangulo {
         a: f64,
         b: f64,
-        c: f64
+        c: f64,
+        tipo: TrianguloTipo
+    }
+
+    #[derive(PartialEq)]
+    #[derive(Debug)]
+    #[derive(Clone, Copy)]
+    pub enum TrianguloTipo {
+        ESCALENO,
+        ISOSCELES,
+        EQUILATERO
     }
 
     impl Triangulo {
@@ -10,26 +20,44 @@ pub mod formas_geometricas {
             if ((a + b) <= c) || ((a + c) <= b) || ((b + c) <= a) {
                 panic!("Se a soma entre os dois lados é igual ou menor ao terceiro, esse triângulo não pode existir.")
             }
+
+            let tipo = Triangulo::get_triangulo_tipo(a, b, c);
     
-            Triangulo { a, b, c }
+            Triangulo { a, b, c, tipo}
         }
 
         pub fn equals(&self, a: f64, b: f64, c: f64) -> bool {
             self.a == a && self.b == b && self.c == c
         }
 
-        pub fn escaleno(&self) -> bool {
-            self.a != self.b && self.b != self.c
+        fn get_triangulo_tipo(a: f64, b: f64, c: f64) -> TrianguloTipo {
+            if Triangulo::escaleno(a, b, c) {
+                return TrianguloTipo::ESCALENO
+            } else if Triangulo::isosceles(a, b, c) {
+                return TrianguloTipo::ISOSCELES
+            } else if Triangulo::equilatero(a, b, c) {
+                return TrianguloTipo::EQUILATERO;
+            }
+
+            panic!("Tipo inválido");
         }
 
-        pub fn isosceles(&self) -> bool {
-            (self.a == self.b && self.a != self.c)
-            || (self.a == self.c && self.a != self.b)
-            || (self.b == self.c && self.b != self.a)
+        fn escaleno(a: f64, b: f64, c: f64) -> bool {
+            a != b && b != c
         }
 
-        pub fn equilatero(&self) -> bool {
-            self.a == self.b && self.b == self.c
+        fn isosceles(a: f64, b: f64, c: f64) -> bool {
+            (a == b && a != c)
+            || (a == c && a != b)
+            || (b == c && b != a)
+        }
+
+        fn equilatero(a: f64, b: f64, c: f64) -> bool {
+            a == b && b == c
+        }
+
+        pub fn tipo(&self) -> TrianguloTipo {
+            self.tipo
         }
 
         pub fn perimetro(&self) -> f64 {

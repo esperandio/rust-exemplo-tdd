@@ -2,7 +2,7 @@ pub mod geometria;
 
 #[cfg(test)]
 mod tests {
-    use crate::geometria::formas_geometricas::Triangulo;
+    use crate::geometria::formas_geometricas::{Triangulo, TrianguloTipo};
 
     #[test]
     fn test_sucesso_criacao_triangulo() {
@@ -23,9 +23,9 @@ mod tests {
 
     #[test]
     fn test_tipo_triangulo() {
-        assert_eq!(Triangulo::new(10.0, 10.0, 10.0).equilatero(), true);
-        assert_eq!(Triangulo::new(20.0, 20.0, 10.0).isosceles(), true);
-        assert_eq!(Triangulo::new(30.0, 20.0, 40.0).escaleno(), true);
+        assert_eq!(Triangulo::new(10.0, 10.0, 10.0).tipo(), TrianguloTipo::EQUILATERO);
+        assert_eq!(Triangulo::new(20.0, 20.0, 10.0).tipo(), TrianguloTipo::ISOSCELES);
+        assert_eq!(Triangulo::new(30.0, 20.0, 40.0).tipo(), TrianguloTipo::ESCALENO);
     }
 
     #[test]
